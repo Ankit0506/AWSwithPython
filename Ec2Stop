@@ -1,0 +1,9 @@
+import boto3
+ids = ['i-0bec2a0bf000bb71c']
+ec2 = boto3.resource('ec2')
+
+#for stopping an ec2 instance
+ec2.instances.filter(InstanceIds = ids).stop() 
+
+#for terminating an ec2 instance
+ec2.instances.filter(InstanceIds = ids).terminate()
